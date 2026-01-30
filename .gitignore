@@ -17,3 +17,6 @@ pip-delete-this-directory.txt
 # IDEs
 .idea/
 .vscode/
+
+# Local Skills
+local_skills/

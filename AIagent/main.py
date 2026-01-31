@@ -1,70 +1,33 @@
-import json
-from dotenv import load_dotenv
-from google import genai
-from google.genai import types
-from system_prompt import SYSTEM_PROMPT
-from tools import printHelloWorld
+import sys
+import os
 
-# Load environment variables
-load_dotenv()
+# Ensure the current directory is in the path so imports work correctly
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-client = genai.Client()
+from orchestator import run_agent
 
-def run_agent(user_query):
-    full_prompt = f"{SYSTEM_PROMPT}\n\nUser Query: {user_query}"
+def main():
+    print("🤖 Welcome to the AI Agent! Type 'exit' or press Ctrl+C to quit.")
+    print("-" * 50)
     
-    response = client.models.generate_content(
-        model='gemma-3-27b-it',
-        contents=full_prompt,
-        config=types.GenerateContentConfig(
-            temperature=0.1 # Very low to avoid hallucinations
-        )
-    )
-
-    try:
-        # Clean potential spaces or line breaks
-        raw_text = response.text.strip()
-        
-        # Remove markdown code blocks if the model generates them
-        if raw_text.startswith("```json"):
-            raw_text = raw_text[7:]
-        elif raw_text.startswith("```"):
-            raw_text = raw_text[3:]
-        
-        if raw_text.endswith("```"):
-            raw_text = raw_text[:-3]
+    while True:
+        try:
+            user_input = input("\nUse >> ")
+            if not user_input.strip():
+                continue
+                
+            if user_input.lower() in ["exit", "quit", "q"]:
+                print("Goodbye! 👋")
+                break
             
-        raw_text = raw_text.strip()
-        
-        data = json.loads(raw_text)
-        
-        # Dispatcher Logic
-        if data.get("FunctionCalling") and data["FunctionCalling"].get("name"):
-            func_name = data["FunctionCalling"]["name"]
-            attrs = data["FunctionCalling"].get("attributes", {})
+            response = run_agent(user_input)
+            print(f"\n{response}")
             
-            print(f"Agent called function: {func_name}")
-            
-            if func_name == "hello_world":
-                result = printHelloWorld()
-                return f"Internal Result: {result}"
-            else:
-                return f"Error: Unknown function '{func_name}'"
-        
-        elif data.get("text"):
-            return f"Agent says: {data['text']}"
-        
-        else:
-             return "Error: Model response does not follow the expected schema (neither FunctionCalling nor text)."
-            
-    except json.JSONDecodeError as e:
-        print(f"Error parsing JSON: {e}")
-        print(f"Raw model response: {response.text}")
-        return "JSON format error."
-    except Exception as e:
-        print(f"Unexpected error: {e}")
-        return "System error."
+        except KeyboardInterrupt:
+            print("\n\nGoodbye! 👋")
+            break
+        except Exception as e:
+            print(f"\n❌ An error occurred: {e}")
 
 if __name__ == "__main__":
-    response_text = run_agent("Say hello world")
-    print(response_text)
+    main()

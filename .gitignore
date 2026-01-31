@@ -11,12 +11,7 @@ venv/
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Mac
-.DS_Store
+# AI Workflow
+.ai_workflow/
 
-# IDEs
-.idea/
-.vscode/
 
-# Local Skills
-local_skills/

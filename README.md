@@ -26,12 +26,15 @@ To run this project, you need Python installed and the Google GenAI SDK.
 2. **Install Dependencies**:
 
     ```bash
-    pip install google-genai
+    pip install -r requirements.txt
     ```
 
 3. **Environment Setup**:
-    Ensure you have your API Key ready.
-    *Note: The current code has a hardcoded key for testing, but it is recommended to use environment variables for security.*
+    Create a `.env` file in the root directory and add your API Key:
+
+    ```bash
+    GEMINI_API_KEY=your_api_key_here
+    ```
 
 ## 🚀 Usage
 

@@ -35,11 +35,13 @@ To run this project, you need Python installed and the Google GenAI SDK.
 
 ## 🚀 Usage
 
-Run the main agent script to test the connection to Gemma:
+Run the interactive agent mode to start a conversation:
 
 ```bash
 python AIagent/main.py
 ```
+
+The agent will start an interactive loop where you can enter your queries and receive responses. Type `exit` to quit.
 
 ## 🛠️ Tech Stack
 

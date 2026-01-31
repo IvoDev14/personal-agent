@@ -4,9 +4,9 @@ This project is a personal playground for learning about AI agents. It is design
 
 ## 🌟 Highlights
 
-*   **Learning Focus**: Built specifically for understanding agentic flows and LLM interactions.
-*   **Model Power**: Utilizes `gemma-3-27b-it` for intelligent responses.
-*   **Simple Implementation**: A straightforward testing ground for GenAI capabilities.
+* **Learning Focus**: Built specifically for understanding agentic flows and LLM interactions.
+* **Model Power**: Utilizes `gemma-3-27b-it` for intelligent responses.
+* **Simple Implementation**: A straightforward testing ground for GenAI capabilities.
 
 ## ℹ️ Overview
 
@@ -16,18 +16,20 @@ The goal of this project is to explore the capabilities of building AI agents fr
 
 To run this project, you need Python installed and the Google GenAI SDK.
 
-1.  **Clone the repository** (if valid):
+1. **Clone the repository** (if valid):
+
     ```bash
     git clone <repository-url>
     cd personal-mini-agent
     ```
 
-2.  **Install Dependencies**:
+2. **Install Dependencies**:
+
     ```bash
     pip install google-genai
     ```
 
-3.  **Environment Setup**:
+3. **Environment Setup**:
     Ensure you have your API Key ready.
     *Note: The current code has a hardcoded key for testing, but it is recommended to use environment variables for security.*
 
@@ -41,6 +43,6 @@ python AIagent/main.py
 
 ## 🛠️ Tech Stack
 
-*   **Language**: Python
-*   **Model**: Gemma 3 (27B IT)
-*   **SDK**: Google GenAI
+* **Language**: Python
+* **Model**: Gemma 3 (27B IT)
+* **SDK**: Google GenAI

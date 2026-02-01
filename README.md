@@ -46,6 +46,17 @@ python main.py
 
 The agent will start an interactive loop where you can enter your queries and receive responses. Type `exit` to quit.
 
+## ⚠️ Troubleshooting
+
+**"ModuleNotFoundError: No module named 'config'"**
+
+* Make sure you run the script from the **root directory** using `python main.py`. Do not run files inside `agent/` directly.
+
+**"Warning: GEMINI_API_KEY not found"**
+
+* Ensure you have created the `.env` file in the root directory.
+* Ensure it contains `GEMINI_API_KEY=your_key_starting_with_AIza`.
+
 ## 🛠️ Tech Stack
 
 * **Language**: Python

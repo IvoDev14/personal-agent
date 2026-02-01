@@ -1,7 +1,7 @@
 import json
 from google.genai import types
 from config.prompts import SYSTEM_PROMPT
-from tools.basic_tools import printHelloWorld
+from tools import TOOLS_MAP
 from agent.client import get_client
 
 client = get_client()
@@ -91,6 +91,6 @@ def clean_response(text):
 
 def execute_tool(name):
     """Dispatcher for tools."""
-    if name == "hello_world":
-        return printHelloWorld()
+    if name in TOOLS_MAP:
+        return TOOLS_MAP[name]()
     return f"Error: Tool '{name}' not found."

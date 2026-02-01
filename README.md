@@ -8,6 +8,12 @@ This project is a personal playground for learning about AI agents. It is design
 * **Model Power**: Utilizes `gemma-3-27b-it` for intelligent responses.
 * **Simple Implementation**: A straightforward testing ground for GenAI capabilities.
 
+## ✨ Features
+
+* **ReAct Architecture**: Implements a generic Reasoning + Acting loop.
+* **Tool Usage**: Supports dynamic function calling with arguments.
+* **Extensible**: Easily add new tools via the `tools` registry.
+
 ## ℹ️ Overview
 
 The goal of this project is to explore the capabilities of building AI agents from scratch. It connects to Google's GenAI API to leverage the Gemma family of open models. As a learning resource, it will evolve from simple "Hello World" prompts to more complex agentic behaviors.
@@ -48,11 +54,11 @@ The agent will start an interactive loop where you can enter your queries and re
 
 ## ⚠️ Troubleshooting
 
-**"ModuleNotFoundError: No module named 'config'"**
+### "ModuleNotFoundError: No module named 'config'"
 
 * Make sure you run the script from the **root directory** using `python main.py`. Do not run files inside `agent/` directly.
 
-**"Warning: GEMINI_API_KEY not found"**
+### "Warning: GEMINI_API_KEY not found"
 
 * Ensure you have created the `.env` file in the root directory.
 * Ensure it contains `GEMINI_API_KEY=your_key_starting_with_AIza`.

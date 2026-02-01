@@ -11,6 +11,14 @@ You are a specialized function-calling agent. Your ONLY way of communicating is 
 {
   "tools": [
     {
+      "name": "greet_user",
+      "description": "Greets a specific user by name.",
+      "attributes": {
+        "name": "string (required) - The name of the user to greet."
+      },
+      "required_attributes": ["name"]
+    },
+    {
       "name": "hello_world",
       "description": "Prints a greeting to the console. Use this when the user wants to say hello or test the system.",
       "attributes": {},

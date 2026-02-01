@@ -52,10 +52,12 @@ def run_agent(user_query):
             # CASE A: Function Call
             if data.get("FunctionCalling") and data["FunctionCalling"].get("name"):
                 func_name = data["FunctionCalling"]["name"]
-                print(f"🔄 Agent requires action: {func_name}")
+                attrs = data["FunctionCalling"].get("attributes", {})
+                
+                print(f"🔄 Agent requires action: {func_name} with args: {attrs}")
                 
                 # Execute Tool
-                observation = execute_tool(func_name)
+                observation = execute_tool(func_name, attrs)
                 
                 # Feedback to Model
                 print(f"   -> Observation: {observation}")
@@ -89,8 +91,8 @@ def clean_response(text):
         text = text[:-3]
     return text.strip()
 
-def execute_tool(name):
+def execute_tool(name, args={}):
     """Dispatcher for tools."""
     if name in TOOLS_MAP:
-        return TOOLS_MAP[name]()
+        return TOOLS_MAP[name](**args)
     return f"Error: Tool '{name}' not found."

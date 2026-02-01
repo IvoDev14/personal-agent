@@ -1,10 +1,4 @@
-import sys
-import os
-
-# Ensure the current directory is in the path so imports work correctly
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-from orchestator import run_agent
+from agent.orchestrator import run_agent
 
 def main():
     print("🤖 Welcome to the AI Agent! Type 'exit' or press Ctrl+C to quit.")

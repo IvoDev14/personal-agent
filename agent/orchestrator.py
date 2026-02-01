@@ -1,14 +1,10 @@
 import json
-from dotenv import load_dotenv
-from google import genai
 from google.genai import types
-from system_prompt import SYSTEM_PROMPT
-from tools import printHelloWorld
+from config.prompts import SYSTEM_PROMPT
+from tools.basic_tools import printHelloWorld
+from agent.client import get_client
 
-# Load environment variables
-load_dotenv()
-
-client = genai.Client()
+client = get_client()
 
 def run_agent(user_query):
     full_prompt = f"{SYSTEM_PROMPT}\n\nUser Query: {user_query}"

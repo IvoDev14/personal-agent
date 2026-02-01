@@ -41,7 +41,7 @@ To run this project, you need Python installed and the Google GenAI SDK.
 Run the interactive agent mode to start a conversation:
 
 ```bash
-python AIagent/main.py
+python main.py
 ```
 
 The agent will start an interactive loop where you can enter your queries and receive responses. Type `exit` to quit.

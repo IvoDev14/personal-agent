@@ -11,7 +11,7 @@ This project is a personal playground for learning about AI agents. It is design
 ## ✨ Features
 
 * **ReAct Architecture**: Implements a generic Reasoning + Acting loop.
-* **Tool Usage**: Supports dynamic function calling with arguments.
+* **Tool Usage**: Supports dynamic function calling with arguments, including system command execution (with user approval).
 * **Extensible**: Easily add new tools via the `tools` registry.
 
 ## ℹ️ Overview

@@ -23,6 +23,14 @@ You are a specialized function-calling agent. Your ONLY way of communicating is 
       "description": "Prints a greeting to the console. Use this when the user wants to say hello or test the system.",
       "attributes": {},
       "required_attributes": []
+    },
+    {
+      "name": "execute_terminal",
+      "description": "Executes a shell command on the host system. Use this for file management (mkdir, ls, cat, echo), installing packages, or running scripts. Use the output (STDOUT/STDERR) to verify if the action was successful.",
+      "attributes": {
+        "command": "string (required) - The shell command to execute."
+      },
+      "required_attributes": ["command"]
     }
   ]
 }

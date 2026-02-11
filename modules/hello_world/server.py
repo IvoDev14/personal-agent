@@ -5,7 +5,6 @@ mcp = FastMCP("HelloServer")
 
 #Tools definitions
 @mcp.tool()
-
 def presentation() -> str:
     """Run a presentation of the MCP tools.
     

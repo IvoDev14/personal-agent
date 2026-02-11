@@ -46,7 +46,8 @@ class MCPClientManager:
                 if tool.name == name:
                     return await session.call_tool(name, arguments)
         
-        raise ValueError(f"Tool {name} not found in any connected server.")
+
+
 
     async def cleanup(self):
         """Closes all connections."""

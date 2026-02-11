@@ -17,3 +17,6 @@ pip-delete-this-directory.txt
 # Agent
 .agent/
 
+# Internal Tasks
+.tasks_internal.md
+

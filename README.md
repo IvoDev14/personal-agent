@@ -12,7 +12,22 @@ This project is a personal playground for learning about AI agents. It is design
 
 * **ReAct Architecture**: Implements a generic Reasoning + Acting loop.
 * **Tool Usage**: Supports dynamic function calling with arguments, including system command execution (with user approval).
-* **Extensible**: Easily add new tools via the `tools` registry.
+* **Extensible**: Easily add new tools via the `modules` directory.
+* **Model Context Protocol (MCP)**: Supports dynamic tool loading from MCP servers.
+
+## 🔌 MCP Tools
+
+This agent utilizes the **Model Context Protocol (MCP)** to extend its capabilities.
+
+### 📂 Filesystem Server
+
+We use the official [Filesystem MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) provided by **Anthropic**.
+
+* **Usage**: The server is executed on-demand via `npx`, ensuring you always run the latest version without cluttering the repository.
+* **License**: MIT
+* **Source**: `@modelcontextprotocol/server-filesystem`
+
+> *Note: This project is not affiliated with Anthropic but leverages their open-source MCP implementation.*
 
 ## ℹ️ Overview
 

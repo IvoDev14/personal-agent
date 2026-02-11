@@ -1,4 +1,5 @@
-from agent.orchestrator import run_agent
+import asyncio
+from core.orchestrator import run_agent
 
 def main():
     print("🤖 Welcome to the AI Agent! Type 'exit' or press Ctrl+C to quit.")
@@ -14,11 +15,12 @@ def main():
                 print("Goodbye! 👋")
                 break
             
-            response = run_agent(user_input)
+            # Run async agent
+            response = asyncio.run(run_agent(user_input))
             print(f"\n{response}")
             
         except KeyboardInterrupt:
-            print("\n\nGoodbye! 👋")
+            print("\n\nGoodbye! 👋👋👋")
             break
         except Exception as e:
             print(f"\n❌ An error occurred: {e}")

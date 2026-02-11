@@ -1,0 +1,6 @@
+{
+    "command": "python",
+    "args": [
+        "modules/hello_world/server.py"
+    ]
+}

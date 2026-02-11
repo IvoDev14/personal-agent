@@ -40,7 +40,11 @@ To run this project, you need Python installed and the Google GenAI SDK.
 
     ```bash
     GEMINI_API_KEY=your_api_key_here
+    # OR
+    GOOGLE_API_KEY=your_api_key_here
     ```
+
+    You can use `GOOGLE_API_KEY` to access other models like Gemma.
 
 ## 🚀 Usage
 
@@ -56,12 +60,12 @@ The agent will start an interactive loop where you can enter your queries and re
 
 ### "ModuleNotFoundError: No module named 'config'"
 
-* Make sure you run the script from the **root directory** using `python main.py`. Do not run files inside `agent/` directly.
+* Make sure you run the script from the **root directory** using `python main.py`. Do not run files inside `core/` directly.
 
 ### "Warning: GEMINI_API_KEY not found"
 
 * Ensure you have created the `.env` file in the root directory.
-* Ensure it contains `GEMINI_API_KEY=your_key_starting_with_AIza`.
+* Ensure it contains `GEMINI_API_KEY` or `GOOGLE_API_KEY`.
 
 ## 🛠️ Tech Stack
 

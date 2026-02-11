@@ -14,4 +14,6 @@ pip-delete-this-directory.txt
 # AI Workflow
 .ai_workflow/
 
+# Agent
+.agent/
 

@@ -11,6 +11,8 @@ This project is a personal playground for learning about AI agents. It is design
 ## ✨ Features
 
 * **ReAct Architecture**: Implements a generic Reasoning + Acting loop.
+* **Smart Planning**: Enforces structured, step-by-step reasoning (`thought` chain) before every action.
+* **Efficiency-First**: Strictly prioritizes minimal token usage and forbids brute-force methods.
 * **Tool Usage**: Supports dynamic function calling with arguments, including system command execution (with user approval).
 * **Extensible**: Easily add new tools via the `modules` directory.
 * **Model Context Protocol (MCP)**: Supports dynamic tool loading from MCP servers.

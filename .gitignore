@@ -20,3 +20,9 @@ pip-delete-this-directory.txt
 # Internal Tasks
 .tasks_internal.md
 
+# Assets
+.assets/
+
+# System Files
+.DS_Store
+**/.DS_Store

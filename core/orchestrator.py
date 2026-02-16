@@ -62,7 +62,7 @@ class Orchestrator:
         self.chat_session = self.client.chats.create(
             model='gemma-3-27b-it',
             config=types.GenerateContentConfig(
-                temperature=0.1 
+                temperature=1 
             ),
             history=[
                 types.Content(
@@ -90,6 +90,9 @@ class Orchestrator:
             step += 1
             
             try:
+                # DEBUG: raw response
+                print(f"\n[DEBUG] Raw LLM Response:\n{response.text}\n[DEBUG] End Raw Response\n")
+
                 # Parse Text Response
                 raw_text = self.clean_response(response.text)
                 
